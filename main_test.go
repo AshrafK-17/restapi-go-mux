@@ -4,13 +4,17 @@ import (
 	"log"
 	"os"
 	"testing"
+
+	main "github.com/AshrafK-17/restapi-go-mux"
 )
 
 var a main.App
 
 func TestMain(m *testing.M) {
 	a.Initialize(
-		os.Getenv("APP_DB_USERNAME"),
+	    os.Getenv("APP_DB_HOST"),
+	    os.Getenv("APP_DB_PORT"),
+	    os.Getenv("APP_DB_USERNAME"),
 		os.Getenv("APP_DB_PASSWORD"),
 		os.Getenv("APP_DB_NAME"))
 
